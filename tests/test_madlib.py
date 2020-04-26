@@ -18,21 +18,21 @@ def test_parse_original():
     expected = ["A ", " and ", " ", ""]
     assert actual == expected
 
-def test_display_1():
+def get_result_1():
     original_parsed = ["A ", " and ", " ", ""]
     inputs = ["dark", "stormy", "night"]
     actual = "A dark and stormy night"
     expected = display(original_parsed, inputs)
     assert actual == expected
 
-def test_display_2():
+def get_result_2():
     original_parsed = ["A ", " and ", " ", " something"]
     inputs = ["dark", "stormy", "night"]
     actual = "A dark and stormy night something"
     expected = display(original_parsed, inputs)
     assert actual == expected
 
-def test_display_3():
+def get_result_3():
     original_parsed = ["A ", " and ", " "]
     inputs = ["dark", "stormy", "night", "something"]
     actual = "A dark and stormy nightsomething"

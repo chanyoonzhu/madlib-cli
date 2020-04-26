@@ -20,7 +20,7 @@ def get_input(blanks):
         inputs.append(input_value)
     return inputs
 
-def display(original_parsed, inputs):
+def get_result(original_parsed, inputs):
     output = []
     for i in range(len(inputs)):
         if i < len(original_parsed):
@@ -30,6 +30,9 @@ def display(original_parsed, inputs):
         output.append(original_parsed[i])
     return ''.join(output)
 
+def display(content):
+    print(content)
+
 def read_file(filepath):
     with open(filepath, 'r') as file:
         return file.read()
@@ -37,13 +40,18 @@ def read_file(filepath):
 def write_to_file(content):
     with open('assets/output.txt', 'w') as file:
         file.write(content)
+
+def welcome():
+    print("welcome to the mad lib game!")
     
 def main():
+    welcome()
     template = read_file('assets/template.txt')
     blanks = parse_blanks(template)
     original = parse_original(template)
     inputs = get_input(blanks)
-    output = display(original, inputs)
+    output = get_result(original, inputs)
+    display(output)
     write_to_file(output)
 
 if __name__ == "__main__":
